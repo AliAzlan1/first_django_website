@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pillow_site',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
     #r'C:\Users\OK Computers\Desktop\Study\Aim\python\web\My Root\my_root_proj\static'
 ]
+
+#Email settings
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "reozojee@gmail.com"
+EMAIL_HOST_PASSWORD = "jhonscott256"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
