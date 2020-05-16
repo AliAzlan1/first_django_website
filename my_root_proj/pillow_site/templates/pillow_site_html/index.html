@@ -9,22 +9,22 @@
     <title>pillloMart</title>
     <link rel="icon" href="{% static 'staticfiles/img/favicon.png' %}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/bootstrap.min.css' %}">
     <!-- animate CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/animate.css' %}">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/owl.carousel.min.css' %}">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/all.css' %}">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/flaticon.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/themify-icons.css' %}">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/magnific-popup.css' %}">
     <!-- swiper CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/slick.css' %}">
     <!-- style CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'staticfiles/css/style.css' %}">
 </head>
 
 <body>
@@ -66,7 +66,7 @@
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="login.html"> 
+                                        <a class="dropdown-item" href="{% url 'accounts:login' %}"> 
                                             login
                                             
                                         </a>
