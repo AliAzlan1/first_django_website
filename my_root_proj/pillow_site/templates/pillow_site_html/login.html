@@ -1,4 +1,6 @@
 {% load static %}
+{% load widget_tweaks %}
+
 <!doctype html>
 <html lang="zxx">
 
@@ -43,6 +45,14 @@
 
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
+                                {% if request.user.is_authenticated %}
+                                <li class="nav-item">
+                                    <form class="nav-link" action="/shop/logout" method='POST'>
+                                        {% csrf_token %}
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
@@ -148,21 +158,15 @@
                         <div class="login_part_form_iner">
                             <h3>Welcome Back ! <br>
                             Please Sign in now</h3>
-                            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="/shop/login" method="post">
+                                {% csrf_token %}
                                 {% for hidden in form.hidden_fields %}
                                     {{ hidden }}
                                 {% endfor %}
                                 {% for field in form %}
                                 <div class="col-md-12 form-group p_star">
                                     <label for="{{ field.id_for_label }}"></label>
-                                    <input 
-                                    type="{{ field.input_type }}" 
-                                    class="form-control" 
-                                    id="{{ field.id_for_label }}" 
-                                    name="{{ field.html_name }}" 
-                                    value="{{ field.html_name }}"
-                                    placeholder="{{ field.placeholder }}">
-                                    }
+                                    <span class="form-control">{{ field }}</span>
                                 </div>
                                 {% endfor %}
                                 <div class="col-md-12 form-group">
@@ -170,6 +174,9 @@
                                         <input type="checkbox" id="f-option" name="selector">
                                         <label for="f-option">Remember me</label>
                                     </div>
+                                    {% if request.GET.next %}
+                                        <input type="hidden" name="next" value="{{ request.GET.next }}">
+                                    {% endif %}
                                     <button type="submit" value="submit" class="btn_3">
                                         log in
                                     </button>

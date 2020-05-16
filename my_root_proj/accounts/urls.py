@@ -6,4 +6,5 @@ name = 'accounts'
 urlpatterns = [
     path(r'signup', views.shop_signup, name="signup"),
     path(r'login', views.shop_login, name="login"),
+    path(r'logout', views.shop_logout, name="logout"),
 ]

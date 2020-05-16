@@ -9,11 +9,11 @@ class Profile(models.Model):
 	bio = models.TextField(max_length=500, blank=True)
 	address = models.CharField(max_length=30, blank=True)
 	birth_date = models.DateField(null=True, blank=True)
-	email = models.EmailField(null=True, blank=True)
+	email = models.EmailField(unique=True, null=True)
 	email_confirmed = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.user
+		return str(self.user)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
