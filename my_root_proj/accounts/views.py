@@ -1,13 +1,12 @@
-from django.contrib.sites.shortcuts import get_current_site
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, authenticate, logout
-from django.utils.encoding import force_bytes,force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
-from django.shortcuts import render,redirect
-from .tokens import account_activation_token
-from .forms import SignupForm
+from django.contrib.sites.shortcuts import get_current_site #activate
+from django.contrib.auth.models import User #activate
+from django.contrib.auth import login, authenticate, logout #shop_login,shop_logout
+from django.utils.encoding import force_bytes,force_text #shop_signup,activate
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode #account_activation_sent,activate
+from django.template.loader import render_to_string #account_activation_sent
+from django.shortcuts import render,redirect #almost all functions
+from .tokens import account_activation_token #activate
+from .forms import SignupForm #signup
 
 # Create your views here.
 def shop_signup(request):
