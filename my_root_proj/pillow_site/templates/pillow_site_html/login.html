@@ -160,15 +160,12 @@
                             Please Sign in now</h3>
                             <form class="row contact_form" action="/shop/login" method="post">
                                 {% csrf_token %}
-                                {% for hidden in form.hidden_fields %}
-                                    {{ hidden }}
-                                {% endfor %}
-                                {% for field in form %}
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="{{ field.id_for_label }}"></label>
-                                    <span class="form-control">{{ field }}</span>
+                                    <input type="text" class="form-control" id="name" name="username" value="" placeholder="Username">
                                 </div>
-                                {% endfor %}
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password">
+                                </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
                                         <input type="checkbox" id="f-option" name="selector">

@@ -152,14 +152,10 @@
                                 Sign Up now</h3>
                             <form class="row contact_form" action="/shop/signup" method="POST">
                                 {% csrf_token %}
-                                {% for hidden in form.hidden_fields %}
-                                    {{ hidden }}
-                                {% endfor %}
                                 {% for field in form %}
-                                <div class="col-md-12 form-group p_star">
-                                    <label for="{{ field.id_for_label }}"></label>
-                                    <span class="form-control">{{ field }}</span>
-                                </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        {{ field }}
+                                    </div>
                                 {% endfor %}
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
