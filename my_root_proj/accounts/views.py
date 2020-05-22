@@ -6,7 +6,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode #acco
 from django.template.loader import render_to_string #account_activation_sent
 from django.shortcuts import render,redirect #almost all functions
 from .tokens import account_activation_token #activate
-from .forms import SignupForm #signup
+from .forms import SignupForm #signup 
 
 # Create your views here.
 def shop_signup(request):
@@ -71,4 +71,4 @@ def activate(request, uidb64, token):
 		login(request, user)
 		return redirect('/shop/index')
 	else:
-		return render(request, 'account_activation_invalid.html', {})
+		return render(request, 'pillow_site_html/account_activation_invalid.html', {})
